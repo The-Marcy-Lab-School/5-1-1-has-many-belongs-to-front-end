@@ -1,6 +1,6 @@
 import './style.css'
-import { renderAuthor, renderBooks, updateDropDown } from './utils/render-functions.js';
-import Author from './models/has-many.js';
+import { renderAuthor, renderBooks, updateDropDown } from './render-functions.js';
+import Author from './models/Author.js';
 
 /* 
 After a user submits an authors name, generate a new Author
@@ -17,8 +17,8 @@ const handleAuthorSubmit = (e) => {
   const author = new Author(name);
 
   // Render updated data
-  updateDropDown(Author.getAllAuthors());
   renderAuthor(author.id, author.name);
+  updateDropDown(Author.getAllAuthors());
 
   form.reset();
 }
@@ -47,6 +47,22 @@ const handleBookSubmit = (e) => {
 const main = () => {
   document.getElementById('author-form').addEventListener('submit', handleAuthorSubmit);
   document.getElementById('book-form').addEventListener('submit', handleBookSubmit);
+
+  // Hard Code Some Authors and Books
+  const bellHooks = new Author('bell hooks');
+  bellHooks.addBook('all about love');
+
+  const jamesBaldwin = new Author('James Baldwin');
+  jamesBaldwin.addBook('The Fire Next Time');
+  jamesBaldwin.addBook('If Beale Streate Could Talk');
+
+  // Render Everything
+  renderAuthor(bellHooks.id, bellHooks.name);
+  renderAuthor(jamesBaldwin.id, jamesBaldwin.name);
+  updateDropDown(Author.getAllAuthors());
+
+  renderBooks(bellHooks.id, bellHooks.getBooks());
+  renderBooks(jamesBaldwin.id, jamesBaldwin.getBooks());
 }
 
 main();

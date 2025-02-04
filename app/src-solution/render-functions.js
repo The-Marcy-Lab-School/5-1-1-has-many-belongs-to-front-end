@@ -5,6 +5,7 @@ export const renderAuthor = (id, name) => {
   // put the id of the author on the list item
   const authorElement = document.createElement('li');
   authorElement.id = `author-num-${id}`;
+  authorElement.classList.add('author-li');
   authorsList.append(authorElement);
 
   // add the authors name to the list item 

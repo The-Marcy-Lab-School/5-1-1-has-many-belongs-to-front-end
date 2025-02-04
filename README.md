@@ -1,9 +1,5 @@
 # Building a Has Many / Belongs To Frontend
 
-{% hint style="info" %}
-Follow along with code examples [here](https://github.com/The-Marcy-Lab-School/5-1-1-has-many-belongs-to-front-end)!
-{% endhint %}
-
 ## Overview
 
 The accompanying repo contains a Vite app that has been built out for you to implement a **has many / belongs to** relationship between classes. 

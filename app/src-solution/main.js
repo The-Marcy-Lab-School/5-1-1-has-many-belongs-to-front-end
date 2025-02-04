@@ -1,6 +1,6 @@
 import './style.css'
 import { renderAuthor, renderBooks, updateDropDown } from './utils/render-functions.js';
-import Author from './models/has-many.js';
+import Author from './models/Author.js';
 
 /* 
 After a user submits an authors name, generate a new Author
@@ -17,8 +17,8 @@ const handleAuthorSubmit = (e) => {
   const author = new Author(name);
 
   // Render updated data
-  updateDropDown(Author.getAllAuthors());
   renderAuthor(author.id, author.name);
+  updateDropDown(Author.getAllAuthors());
 
   form.reset();
 }

@@ -5,12 +5,49 @@
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Vite App</title>
-    <script type="module" src="./src/main.js"></script>
+    <script type="module" src="./src-solution/main.js"></script>
+    <!-- <script type="module" src="./src/main.js"></script> -->
   </head>
   <body>
-    <div class="container">
+    <div id="app">
       <h1>Relationship Visualizer</h1>
-      <div id="app"></div>
+      <section id="author-form-section">
+        <form id="author-form">
+          <h2>Add Author</h2>
+          <div>
+            <label for="author-name">Author Name:</label>
+            <input type="text" name="name" id="author-name" required>
+          </div>
+          <button type="submit">Add Author</button>
+        </form>
+      </section>
+      <section id="book-form-section">
+        <form id="book-form">
+          <h2>Add Book</h2>
+
+          <div>
+            <label for="authors-select">Select Author:</label>
+            <select id="authors-select" name="id" required>
+              <!-- Dynamic Author Options Here: -->
+              <!-- <option value="1">bell hooks</option> -->
+              <!-- <option value="2">James Baldwin</option> -->
+            </select>
+          </div>
+
+          <div>
+            <label for="book-title">Book Title:</label>
+            <input type="text" name="title" id="book-title" required>
+          </div>
+
+          <button type="submit">Add Book</button>
+        </form>
+      </section>
+      <section id="author-list-section">
+        <h2>Collection</h2>
+        <ul id='authors-list'>
+          <!-- Dynamic Authors Listed Here -->
+        </ul>
+      </section>
     </div>
   </body>
 </html>
